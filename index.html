@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Visualizer</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="min-h-screen my-4 flex flex-col items-center justify-center px-4">
+
+  <!-- Check Container -->
+  <div class="flex flex-col gap-4 bg-white p-6 md:p-12 rounded-2xl shadow-2xl w-full max-w-md hover:-translate-y-1.5 transition-all duration-200 ease-in">
+    <h2 class="text-xl md:text-2xl text-center font-bold">
+      Password Strength Checker
+    </h2>
+    <label id="password" for="password" class="border-2 p-3 md:p-4 rounded-xl border-gray-400 transition focus-within:shadow-[0_0_0_3px_rgba(59,130,246,0.4)] focus-within:border-blue-500">
+      <input name="password" class="focus:outline-none w-full" id="passwordInput" type="text" placeholder="Enter your password">
+    </label>
+    <ul class="space-y-2 text-sm md:text-base">
+      <li class="text-red-500 transition-all duration-500" id="pwdLength"><i class="fa-solid fa-xmark mx-4"></i>At least 8 characters</li>
+      <li class="text-red-500" id="pwdLowerCase"><i class="fa-solid fa-xmark mx-4"></i>One lowercase letter</li>
+      <li class="text-red-500" id="pwdUpperCase"><i class="fa-solid fa-xmark mx-4"></i>One uppercase letter</li>
+      <li class="text-red-500" id="pwdNumber"><i class="fa-solid fa-xmark mx-4"></i>One number</li>
+      <li class="text-red-500" id="pwdSpecialChar"><i class="fa-solid fa-xmark mx-4"></i>One special character</li>
+      <li class="text-red-500" id="pwdNoSpaces"><i class="fa-solid fa-xmark mx-4"></i>No spaces</li>
+      <li class="text-red-500" id="pwdNoRepeated"><i class="fa-solid fa-xmark mx-4"></i>No repeated characters (3+)</li>
+    </ul>
+  </div>
+
+  <!-- Result Container -->
+  <div class="resultContainer hidden flex-col gap-4 bg-white mt-5 p-6 md:p-12 rounded-2xl shadow-2xl w-full max-w-3xl hover:-translate-y-1.5 transition-all duration-200 ease-in">
+    <!-- Strength Info -->
+    <div class="flex justify-between text-sm font-bold">
+      <span><i class="fa-solid fa-circle" id="strengthIndicator"></i>Your password strength</span>
+      <span id="strengthLabel" class="text-green-500">Good 🫠</span>
+    </div>
+    <!-- Strength Bar -->
+    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+      <div id="strengthBar" class="h-full w-[90%] bg-green-500 transition-all duration-300 ease-out rounded-full"></div>
+    </div>
+    <!-- Feedback Container -->
+    <div id="feedbackContainer">
+      <ul id="results" class="text-red-700 leading-relaxed">
+
+      </ul>
+      <p class="bg-amber-400 mx-auto rounded-xl font-bold py-3 px-4 text-center m-4">Strength : <span id="strength"></span></p>
+    </div>
+  </div>
+</body>
+
+</html>

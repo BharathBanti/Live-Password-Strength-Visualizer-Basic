@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply box-border p-0 m-0;
+  }
+}
+
+@layer components {
+  .box-shadow {
+    @apply bg-[#e0e0e0] rounded-xl shadow-[29px_29px_57px_#c7c7c7,-29px_-29px_57px_#ffffff];
+  }
+}
