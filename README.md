@@ -6,7 +6,7 @@ Built using **HTML, Tailwind CSS, and Vanilla JavaScript**.
 
 ## 🔗 Live Demo
 
-> *https://bharathbanti.github.io/Live-Password-Strength-Visualizer---Basic/*
+> *https://bharathbanti.github.io/Live-Password-Strength-Visualizer-Basic/*
 
 ## 🚀 Features
 
